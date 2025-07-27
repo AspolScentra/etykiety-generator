@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generator etykiet CLP</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="mobile-warning">
+    Prosimy otworzyć stronę na komputerze – generator etykiet CLP nie działa na urządzeniach mobilnych.
+</div>
+  <div class="container">
+   <div class="preview-panel">
+    <div class="preview">
+      <div id="label" class="circle-label">
+        <div id="label-product">
+            <div id="product-line-1">Nazwa Produktu</div>
+            <div id="product-line-2"></div>
+        </div>
+        <div class="fixed-warning-ready" id="fixedWarning"></div>
+        <div class="piktogramy"><img src="https://clpgenerator.brzezinski.studio/clp-generator/nowa-wersja/piktogramyaspol.svg" alt="Piktogramy" class="piktogramyico"/></div>
+        <div class="label-warning-ready" id="label-warning">Tutaj pojawi się tekst ostrzeżenia...</div>
+        <div class="label-warning-ready" id="label-warning-2">Tutaj pojawi się dodatkowy tekst ostrzeżenia...</div>
+        <img id="piktogramWykrzyknik" src="https://clpgenerator.brzezinski.studio/clp-generator/nowa-wersja/piktogram-wykrzyknik.svg" alt="Wykrzyknik" style="display:none;" class="piktogramWykrzyknik"/>
+        <img id="piktogramSrodowisko" src="https://clpgenerator.brzezinski.studio/clp-generator/nowa-wersja/piktogram-srodowisko.svg" alt="Środowisko" style="display:none;" class="piktogramSrodowisko"/>
+        <p id="label-batch">Numer partii: </p>
+        <div id="company-name-block"></div>
+        <div id="company-contact-block"></div>
+        <p id="label-weight">Waga</p>
+        <div id="label-ufi">UFI: </div>
+        <div class="pcn-label">PRODUKT NOTYFIKOWANY<BR>W PCN</div>
+        <img id="ufiGreenLogo" class="ufiGreenLogo-ready" src="https://clpgenerator.brzezinski.studio/clp-generator/nowa-wersja/pcn.svg" alt="PCN" />
+        <img id="ufiGreenLogo" class="ufiGreenLogo-ready" src="https://clpgenerator.brzezinski.studio/clp-generator/nowa-wersja/pcn.svg" alt="PCN" />
+        </div>
+      </div>
+
+      <!-- PANELE STRZAŁEK -->
+      <div class="move-controls-panel">
+        <div class="move-controls-blok">
+          <div class="move-controls">
+            <label>Pozycja nazwy produktu:</label>
+            <button id="moveProductUp">⮝</button>
+            <button id="moveProductDown">⮟</button>
+          </div>
+          <div class="move-controls">
+            <label>Pozycja opisu piktogramów:</label>
+            <button id="moveUp">⮝</button>
+            <button id="moveDown">⮟</button>
+          </div>
+          <div class="move-controls">
+            <label>Pozycja piktogramów:</label>
+            <button id="moveIconsUp">⮝</button>
+            <button id="moveIconsDown">⮟</button>
+          </div>
+          <div class="move-controls">
+            <label>Pozycja klasyfikacji:</label>
+            <button id="moveLabelWarningUp">⮝</button>
+            <button id="moveLabelWarningDown">⮟</button>
+          </div>
+                    <div class="move-controls">
+            <label>Pozycja klasyfikacji 2:</label>
+            <button id="moveLabelWarning2Up">⮝</button>
+            <button id="moveLabelWarning2Down">⮟</button>
+          </div>
+        </div>
+
+        <div class="move-controls-other-blok">
+          <div class="move-controls-blue">
+            <label>Pozycja danych firmy:</label>
+            <button id="moveCompanyNameUp">⮝</button>
+            <button id="moveCompanyNameDown">⮟</button>
+            <button id="moveCompanyNameLeft">⮜</button>
+            <button id="moveCompanyNameRight">⮞</button>
+            <label>Justowanie tekstu</label>
+            <div class="justify-controls">
+            <button id="justifyCompanyLeft">⬅️</button>
+            <button id="justifyCompanyCenter">⬆️</button>
+            <button id="justifyCompanyRight">➡️</button>
+            </div>
+          </div>
+          <div class="move-controls-blue">
+            <label>Pozycja kontaktu:</label>
+            <button id="moveCompanyContactUp">⮝</button>
+            <button id="moveCompanyContactDown">⮟</button>
+            <button id="moveCompanyContactLeft">⮜</button>
+            <button id="moveCompanyContactRight">⮞</button>
+            <label>Justowanie tekstu</label>
+            <div class="justify-controls">
+            <button id="justifyContactLeft">⬅️</button>
+            <button id="justifyContactCenter">⬆️</button>
+            <button id="justifyContactRight">➡️</button>
+            </div>
+          </div>
+          <div class="move-controls-blue">
+            <label>Pozycja partii:</label>
+            <button id="moveBatchUp">⮝</button>
+            <button id="moveBatchDown">⮟</button>
+            <button id="moveBatchLeft">⮜</button>
+            <button id="moveBatchRight">⮞</button>
+          </div>
+          <div class="move-controls-blue">
+            <label>Pozycja wagi:</label>
+            <button id="moveWeightUp">⮝</button>
+            <button id="moveWeightDown">⮟</button>
+            <button id="moveWeightLeft">⮜</button>
+            <button id="moveWeightRight">⮞</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form">
+        <div style="display: flex; flex-direction: row; justify-content: space-between; gap: 5px;">
+        <a href="https://clpgenerator.brzezinski.studio/clp-generator/nowa-wersja/ufi-green.html" class="fraglist-off">Zapachy UFI Green</a>
+        <a href="https://clpgenerator.brzezinski.studio/clp-generator/nowa-wersja/ufi-ready.html" class="fraglist">Zapachy UFI Ready</a></div>
+      <label>Zapach UFI Ready:
+        <select id="fragranceSelect"></select>
+      </label>
+      <label>Stężenie:
+        <select id="concentrationSelect">
+          <option value="6">6%</option>
+          <option value="8">8%</option>
+          <option value="10">10%</option>
+        </select>
+      </label>
+      <label>Nazwa produktu:
+        <input type="text" id="productName" />
+      </label>
+      <label>Druga linijka nazwy produktu:
+      <input type="text" id="productNameLine2" />
+    </label>
+      <label>Waga:
+        <div class="waga"><input type="number" id="massValue" />
+        <select id="massUnit">
+          <option value="g">g</option>
+          <option value="ml">ml</option>
+        </select></div>
+      </label>
+      <label>Nazwa firmy:
+        <input type="text" id="companyName" />
+      </label>
+      <label>Adres:
+        <input type="text" id="companyAddress" />
+      </label>
+      <label>Telefon:
+        <input type="text" id="companyPhone" />
+      </label>
+      <label>Email:
+        <input type="text" id="companyEmail" />
+      </label>
+      <label>Numer partii:
+        <input type="text" id="batchNumber" />
+      </label>
+      <label style="display:none;">Logo UFI Green:
+  <select id="ufiGreenSelect">
+    <option value="yes" selected>Tak</option>
+    <option value="no">Nie</option>
+  </select>
+</label>
+      <button class="button-pobierz" id="downloadPDF">Pobierz PDF</button>
+    <button class="button-pobierz" style="background-color:#ccc;cursor:default;">Pobierz JPG</button>
+    </div>
+    <div class="form">
+    
+                <h3>ℹ️ Jak korzystać z generatora?</h3>
+                <label>1. Uzupełnij dane w formularzu obok.</label>
+                <label>2. Kontrolkami pod podglądem etykiety można poprawić ustawienie elementów.</label>
+                <label>3. Wybierz opcję "Pobierz PDF" i poczekaj na pobranie się pliku.</label>
+                <label>Gotową etykietę można łatwo wydrukować korzystając np. z oprogramowania do etykiet avery:<br> avery-zweckform.pl/oprogramowanie</label>
+                <h3>📋 Ważne informacje:</h3>
+                <label>- Wygenerowanie pierwszej etykiety może trwać do ok. 1 min. (kolejne zapisują się szybciej).</label>
+                <label>- Generator działa prawidłowo tylko w wersji przeglądarkowej na komputerze.</label>
+                <h3>🔧 Planowane funkcje</h3>
+                <label>⚬ Eksport do JPG/PNG.</label>
+                <label>⚬ Możliwość zmiany wielkości czcionek.</label>
+                <label>⚬ Dodanie pola na dodatkowy dowolny tekst.</label>
+                <label>⚬ Zmiana kształtu/rozmiaru etykiety.</label>
+    </div>
+  </div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="script_ufiready.js"></script>
+
+
+</body>
+</html>
