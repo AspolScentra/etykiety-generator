@@ -6,8 +6,13 @@ import puppeteer from 'puppeteer';
 const app = express();
 const port = process.env.PORT || 3000;
 
+// ✅ CORS – pozwalamy na połączenia z tych domen:
 app.use(cors({
-  origin: 'https://clpgenerator.brzezinski.studio',
+  origin: [
+    'https://clpgenerator.brzezinski.studio',
+    'https://aspolscentrapolish-f9euh4g3dsc2c5cs.polandcentral-01.azurewebsites.net',
+    'https://aspol.info'
+  ],
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type']
 }));
@@ -28,7 +33,7 @@ app.post('/generate-pdf', async (req, res) => {
     await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
 
     const label = await page.$('#label');
-    const clip = await label.boundingBox();
+    const clip = await label?.boundingBox();
 
     if (!clip) throw new Error("Nie znaleziono #label w HTML!");
 
@@ -57,5 +62,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`PDF generator działa na http://localhost:${port}`);
+  console.log(`✅ PDF generator działa na http://localhost:${port}`);
 });
